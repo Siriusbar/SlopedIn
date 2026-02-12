@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#0f3460"/>
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#52c41a" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#ff4d4f" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+  <!-- Background rounded square -->
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <!-- Magnifying glass circle -->
+  <circle cx="54" cy="50" r="28" fill="url(#lens)" stroke="#e0e0e0" stroke-width="4"/>
+  <!-- Magnifying glass handle -->
+  <line x1="74" y1="70" x2="100" y2="96" stroke="#e0e0e0" stroke-width="6" stroke-linecap="round"/>
+  <!-- Robot face inside lens -->
+  <!-- Eyes -->
+  <circle cx="44" cy="46" r="4" fill="#ff4d4f"/>
+  <circle cx="64" cy="46" r="4" fill="#52c41a"/>
+  <!-- Mouth -->
+  <rect x="44" y="56" width="20" height="3" rx="1.5" fill="#8899aa"/>
+  <!-- Antenna -->
+  <line x1="54" y1="26" x2="54" y2="18" stroke="#8899aa" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="54" cy="16" r="3" fill="#ff7a45"/>
+</svg>

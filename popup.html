@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlopedIn</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 280px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+      background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      color: #e0e0e0;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* ── Header ──────────────────────────────────────────────────────────── */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .header-icon {
+      font-size: 28px;
+      line-height: 1;
+    }
+
+    .header-text h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 0.03em;
+    }
+
+    .header-text p {
+      font-size: 11px;
+      color: #8899aa;
+      margin-top: 2px;
+    }
+
+    /* ── Divider ─────────────────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+      margin: 14px 0;
+    }
+
+    /* ── Toggle Row ──────────────────────────────────────────────────────── */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .toggle-label {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* ── Toggle Switch ───────────────────────────────────────────────────── */
+    .switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #3a3a4a;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .slider::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .switch input:checked + .slider {
+      background: linear-gradient(135deg, #52c41a, #73d13d);
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    /* ── Status ──────────────────────────────────────────────────────────── */
+    .status {
+      margin-top: 14px;
+      text-align: center;
+      font-size: 11.5px;
+      color: #8899aa;
+    }
+
+    .status .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      margin-right: 5px;
+      vertical-align: middle;
+      transition: background 0.3s ease;
+    }
+
+    .status .dot.on  { background: #52c41a; box-shadow: 0 0 6px rgba(82,196,26,0.5); }
+    .status .dot.off { background: #ff4d4f; box-shadow: 0 0 6px rgba(255,77,79,0.3); }
+
+    /* ── Footer ──────────────────────────────────────────────────────────── */
+    .footer {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 10px;
+      color: #556677;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="header-icon">🔍</span>
+    <div class="header-text">
+      <h1>SlopedIn</h1>
+      <p>AI Content Detector for LinkedIn</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="toggle-row">
+    <span class="toggle-label">Detection</span>
+    <label class="switch">
+      <input type="checkbox" id="toggleEnabled" checked />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div class="status" id="statusText">
+    <span class="dot on" id="statusDot"></span>
+    Scanning feed…
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="footer">
+    Local inference · No data leaves your browser
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
