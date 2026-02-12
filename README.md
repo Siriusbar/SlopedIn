@@ -25,11 +25,11 @@
 - 🏷️ **Visual badges** — color-coded labels on each post (🟢 Human · 🔴 AI-generated)
 - ⚡ **Toggle on/off** — enable or disable detection from the popup
 
-## 🖥️ Screenshots
+<!-- ## 🖥️ Screenshots
 
 | Popup | Feed Badge |
 |-------|------------|
-| Clean dark-mode popup with on/off toggle | Posts get a colored badge with confidence score |
+| Clean dark-mode popup with on/off toggle | Posts get a colored badge with confidence score | -->
 
 ## 🏗️ Architecture
 
